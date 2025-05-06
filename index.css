@@ -1,0 +1,119 @@
+@font-face {
+    font-family: 'Poppins';
+    src: url('./fonts/Poppins-Regular.ttf');
+
+}
+
+*{
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+    background: radial-gradient(circle at center, #f0f0f0, #cccccc);
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+
+  .container {
+    background-color: white;
+    border: 1px solid #000cb457;
+    border-top: .9rem solid #000ed3;
+    border-radius: 1.5rem;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.151);
+    padding: 40px;
+    width: 1200px;
+    height: 250px;
+    text-align: center;
+  }
+
+  h2 {
+    color: #000ed3;
+    position: relative;
+    bottom: 30px;
+  }
+
+  .form {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+
+  }
+
+  .box-input-esquerda{
+    flex: 1;
+    display: grid;
+    align-items: center;
+
+  }
+
+  .box-input-esquerda input{
+    background: rgb(248, 248, 248);
+    border-left: 3px solid #0011ff;
+  }
+
+  .box-input-esquerda input:focus{
+    outline: none;
+    border-left: 3px solid #0011ff;
+  }
+
+  .box-inputs-direita input{
+    flex: 1;
+    justify-content: center;
+  }
+
+  .box-inputs-direita {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  input {
+    padding: 10px 15px;
+    font-size: 16px;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+  }
+
+  input:disabled {
+    background-color: #e0e0e0;
+    color: #555;
+    pointer-events: none;;
+  }
+
+  .box-input-esquerda {
+    flex: 1;
+    display: grid;
+    align-items: center;
+    position: relative; /* NECESSÁRIO para posicionar a lista corretamente */
+  }
+  
+  #sugestoes {
+    position: absolute;
+    top: 63%;
+    left: 0;
+    right: 0;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    margin-top: 5px;
+    z-index: 10;
+    max-height: 200px;
+    overflow-y: auto;
+  }
+  
+  .sugestao {
+    padding: 10px;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  
+  .sugestao:hover {
+    background-color: #f0f0f0;
+  }
+  
