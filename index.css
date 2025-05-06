@@ -21,7 +21,7 @@ body {
   .container {
     background-color: white;
     border: 1px solid #000cb457;
-    border-top: .9rem solid #000ed3;
+    border-top: .9rem solid #d30000;
     border-radius: 1.5rem;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.151);
     padding: 40px;
