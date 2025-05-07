@@ -46,9 +46,15 @@ document.addEventListener("DOMContentLoaded", function () {
         return;
       }
   
-      const resultados = condominios.filter(c =>
-        c["Condomínio"]?.toLowerCase().includes(termo)
-      );
+      function removerAcentos(texto) {
+        return texto.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+      }
+      
+      const resultados = condominios.filter(c => {
+        const nomeCondominio = removerAcentos(c["Condomínio"]?.toLowerCase() || "");
+        const termoNormalizado = removerAcentos(termo);
+        return nomeCondominio.includes(termoNormalizado);
+      });
   
       resultados.forEach(c => {
         const sugestao = document.createElement("div");
