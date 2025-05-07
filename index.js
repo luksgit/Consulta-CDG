@@ -50,6 +50,10 @@ document.addEventListener("DOMContentLoaded", function () {
         return texto.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
       }
       
+      function removerAcentos(texto) {
+        return texto.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+      }
+      
       const resultados = condominios.filter(c => {
         const nomeCondominio = removerAcentos(c["Condomínio"]?.toLowerCase() || "");
         const termoNormalizado = removerAcentos(termo);
