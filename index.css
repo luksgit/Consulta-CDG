@@ -8,6 +8,26 @@
   font-family: "Poppins", sans-serif;
 }
 
+#logo{
+  margin: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+h2{
+  margin-top: 10px;
+  color: #000ed3;
+  position: relative;
+}
+
+img{
+
+  width: 150px;
+  height: auto;
+  padding: 0;
+  margin-top: 20px;
+}
+
 body {
     background: radial-gradient(circle at center, #f0f0f0, #cccccc);
     font-family: Arial, sans-serif;
@@ -24,50 +44,47 @@ body {
     border-top: .9rem solid #000ed3;
     border-radius: 1.5rem;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.151);
-    padding: 40px;
+    padding: 0px 40px 40px 40px;
     width: 1200px;
-    height: 250px;
+    height: 580px;
     text-align: center;
   }
 
-  h2 {
-    color: #000ed3;
-    position: relative;
-    bottom: 30px;
-  }
-
   .form {
-    display: flex;
+    display: flex;;
+    flex-direction: column;
     justify-content: space-between;
     gap: 20px;
 
   }
 
-  .box-input-esquerda{
+  .box-input-pesquisar{
     flex: 1;
-    display: grid;
-    align-items: center;
-
+    margin-bottom: 25px;
   }
 
-  .box-input-esquerda input{
+  .box-input-pesquisar input{
     background: rgb(248, 248, 248);
     border-left: 3px solid #0011ff;
+    text-align: center;
+    width: 500px;
+    margin: auto;
   }
 
-  .box-input-esquerda input:focus{
+  .box-input-pesquisar input:focus{
     outline: none;
     border-left: 3px solid #0011ff;
   }
 
-  .box-inputs-direita input{
+  .box-inputs-disableds input{
     flex: 1;
     justify-content: center;
   }
 
-  .box-inputs-direita {
+  .box-inputs-disableds {
     flex: 1;
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
     flex-direction: column;
     gap: 15px;
   }
@@ -86,26 +103,29 @@ body {
     pointer-events: none;;
   }
 
-  .box-input-esquerda {
+  .box-input-pesquisar {
     flex: 1;
     display: grid;
     align-items: center;
     position: relative; /* NECESSÁRIO para posicionar a lista corretamente */
   }
   
-  #sugestoes {
-    position: absolute;
-    top: 63%;
-    left: 0;
-    right: 0;
-    background-color: #ffffff;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    margin-top: 5px;
-    z-index: 10;
-    max-height: 200px;
-    overflow-y: auto;
-  }
+ #sugestoes {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  width: 100%; /* acompanha o tamanho do input */
+  max-width: 500px; /* limita em telas maiores */
+  margin: 0 auto; /* centraliza abaixo do input */
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  z-index: 10;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
   
   .sugestao {
     padding: 10px;
@@ -114,6 +134,48 @@ body {
   }
   
   .sugestao:hover {
-    background-color: #f0f0f0;
+    background-color: #3a41c4;
+    color: white;
+  }
+
+  span{
+    text-align: left;
+    margin-right: 0px;
+    height: 25px;
   }
   
+  .box-inputs-disableds {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.grupo-input, .grupo-input-administradora {
+  display: flex;
+  flex-direction: column;
+}
+
+.grupo-input-administradora {
+  grid-column: 1 / 3;
+  
+}
+
+.grupo-input-administradora input {
+  text-align: center;
+}
+
+.grupo-input-administradora span {
+  text-align: center;
+  padding-bottom: 10px;
+}
+
+.grupo-input input {
+  padding: 10px 15px;
+  font-size: 16px;
+  border: none;
+  border-radius: 10px;
+  background-color: #e0e0e0;
+  color: #555;
+  box-shadow: 0 0 5px rgba(0,0,0,0.1);
+  pointer-events: none;
+}
