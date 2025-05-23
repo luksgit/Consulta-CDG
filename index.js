@@ -3,8 +3,12 @@ document.addEventListener("DOMContentLoaded", function () {
     const inputNome = document.getElementById("input-nome");
     const inputRazaoSocial = document.getElementById("input-razao-social");
     const inputGarantidora = document.getElementById("input-garantidora");
+    const inputSindico = document.getElementById("input-sindico");
+    const inputEndereço = document.getElementById("input-endereço");
+    const inputCEP = document.getElementById("input-cep");
+    const inputAdministradora = document.getElementById("input-administradora");
   
-    const googleSheetURL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQh_qY-fI-QmyCXhHMhaGAqzI-4ARnrk7KoB94roa6z1BeUeU_4kgy-T5vi-Yfao6w_es29ffXzStUc/pub?output=csv";
+    const googleSheetURL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQdtKI5e3LAj4LTnXAJHmOepZr4kIPIREo4bTZ64pFBq4LknnmwyOh1TP5Hz98RxUXzj6rcmAod8EV6/pub?output=csv";
   
     let condominios = [];
   
@@ -23,7 +27,7 @@ document.addEventListener("DOMContentLoaded", function () {
           return obj;
         });
   
-        console.log("Dados carregados:", condominios[0]); // Debug
+        console.log("Dados carregados:", condominios[0]); // Debug para verificar os dados carregados
       })
       .catch(err => console.error("Erro ao carregar os dados da planilha:", err));
   
@@ -39,18 +43,22 @@ document.addEventListener("DOMContentLoaded", function () {
   
       sugestoesContainer.innerHTML = "";
   
-      if (termo.length === 0) {
+      if (termo.length === 0) {  // limpa os inputs quando não há pesquisa
         inputNome.value = "";
         inputRazaoSocial.value = "";
         inputGarantidora.value = "";
+        inputSindico.value = "";
+        inputAdministradora.value = "";
+        inputEndereço.value = "";
+        inputCEP.value = "";
         return;
       }
-  
-      function removerAcentos(texto) {
-        return texto.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+
+      function removerAcentos(texto) { // remove acentos
+        return texto.normalize("NFD").replace(/[\u0300-\u036f]/g, ""); 
       }
-      
-      function removerAcentos(texto) {
+
+      function removerAcentos(texto) { // remove acentos
         return texto.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
       }
       
@@ -65,12 +73,20 @@ document.addEventListener("DOMContentLoaded", function () {
         sugestao.classList.add("sugestao");
         sugestao.textContent = c["Condomínio"];
   
-        sugestao.addEventListener("click", function () {
+        sugestao.addEventListener("click", function () { // acrescenta valores da planilha nos inputs com o mesmo nome e ordem
           inputCondominio.value = c["Condomínio"];
           inputNome.value = c["Nome cadastrado no Vouch"] || "";
           inputRazaoSocial.value = c["Razão Social"] || "";
+          inputSindico.value = c["Síndico"] || "";
+          inputAdministradora.value = c["Administradora"] || "";  
+          inputEndereço.value = c["Endereço"] || "";
+          inputCEP.value = c["CEP"] || ""; 
           inputGarantidora.value = c["Garantidora"] || "";
           sugestoesContainer.innerHTML = "";
+
+          if(inputAdministradora.value === 0 || inputAdministradora.value === "-") {
+            inputAdministradora.value = "Não informado";
+          }
         });
   
         sugestoesContainer.appendChild(sugestao);
