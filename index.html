@@ -1,36 +1,61 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Consulta condomínio - Grupo CDG</title>
-  <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="index.css" />
   <script src="index.js"></script>
-  <link rel="shortcut icon" href="./Imagens/G_GrupoCDG.png" type="image/x-icon">
-  </head>
-
-
+</head>
 <body>
-
-  
   <div class="container">
     
-    <h2>Consulta condomínio - Grupo CDG</h2>
+    <div id="logo">
+    <h2>Consulta condomínio</h2>
+    </div>
     
     <div class="form">
-      
-      <div class="box-input-esquerda">
+      <div class="box-input-pesquisar">
         <input id="input-pesquisar" type="text" placeholder="Pesquisar..." autocomplete="off" />
       </div>
-      
-      <div class="box-inputs-direita">
-        <input id="input-nome" placeholder="Nome cadastrado Vouch" disabled />
-        <input id="input-razao-social" placeholder="Razão Social" disabled />
-        <input id="input-garantidora" placeholder="Garantidora" disabled />
+
+      <div class="box-inputs-disableds">
+        <div class="grupo-input">
+          <span>Nome cadastrado no Vouch:</span>
+          <input id="input-nome" placeholder="Nome cadastrado Vouch" disabled />
+        </div>
+
+        <div class="grupo-input">
+          <span>Razão Social:</span>
+          <input id="input-razao-social" placeholder="Razão Social" disabled />
+        </div>
+
+        <div class="grupo-input">
+          <span>Garantidora:</span>
+          <input id="input-garantidora" placeholder="Garantidora" disabled />
+        </div>
+
+        <div class="grupo-input">
+          <span>Síndico:</span>
+          <input id="input-sindico" placeholder="Síndico" disabled />
+        </div>
+
+        <div class="grupo-input">
+          <span>Endereço do condomínio:</span>
+          <input id="input-endereço" placeholder="Endereço" disabled />
+        </div>
+
+        <div class="grupo-input">
+          <span>CEP:</span>
+          <input id="input-cep" placeholder="CEP" disabled />
+        </div>
+
+        <div class="grupo-input-administradora">
+          <span>Administradora responsável:</span>
+          <input id="input-administradora" placeholder="Administradora" disabled />
+        </div>
       </div>
     </div>
-  
+    <img src="./Imagens/nova-logo.png" alt="logo-cdg" loading="eager">
   </div>
-
 </body>
 </html>
