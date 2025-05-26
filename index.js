@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const inputCEP = document.getElementById("input-cep");
     const inputAdministradora = document.getElementById("input-administradora");
   
-    const googleSheetURL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQdtKI5e3LAj4LTnXAJHmOepZr4kIPIREo4bTZ64pFBq4LknnmwyOh1TP5Hz98RxUXzj6rcmAod8EV6/pub?output=csv";
+    const googleSheetURL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQh_qY-fI-QmyCXhHMhaGAqzI-4ARnrk7KoB94roa6z1BeUeU_4kgy-T5vi-Yfao6w_es29ffXzStUc/pub?output=csv";
   
     let condominios = [];
   
