@@ -7,11 +7,12 @@ document.addEventListener("DOMContentLoaded", function () {
     const inputEndereço = document.getElementById("input-endereço");
     const inputCEP = document.getElementById("input-cep");
     const inputAdministradora = document.getElementById("input-administradora");
+    const containerRamais = document.getElementById("container-ramais");
   
     const googleSheetURL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQh_qY-fI-QmyCXhHMhaGAqzI-4ARnrk7KoB94roa6z1BeUeU_4kgy-T5vi-Yfao6w_es29ffXzStUc/pub?output=csv";
-  
-    let condominios = [];
-  
+
+    let condominios = []; 
+
     // Carregar e processar os dados da planilha
     fetch(googleSheetURL)
       .then(response => response.text())
@@ -92,5 +93,12 @@ document.addEventListener("DOMContentLoaded", function () {
         sugestoesContainer.appendChild(sugestao);
       });
     });
-  });
   
+  // Lista de ramais após apertar o botão
+  
+document.getElementById("button-ramais").addEventListener("click", function () {
+
+  containerRamais.classList.toggle("visivel");
+
+})});
+ 
