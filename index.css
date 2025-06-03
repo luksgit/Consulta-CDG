@@ -8,16 +8,45 @@
   font-family: "Poppins", sans-serif;
 }
 
-#logo{
+#título{
   margin: 10px;
+  position: relative;
   display: flex;
   justify-content: center;
+  width: 100%;
+}
+
+#button-ramais{
+  display: grid;
+  color: #02007e;
+  font-weight: 500;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  right: 1%;
+  top: 10%;
+  transition: transform 0.2s ease;
+}
+
+#button-ramais:active{
+  transform: scale(0.9);
+}
+
+#img-ramais{
+  width: 55px;
+  height: 55px;
+  margin: 0%;
 }
 
 h2{
   margin-top: 10px;
   color: #000ed3;
   position: relative;
+}
+
+#title-ramais{
+  margin: 10px;
 }
 
 img{
@@ -28,7 +57,7 @@ img{
 }
 
 body {
-    background: radial-gradient(circle at center, #f0f0f0, #cccccc);
+    background: radial-gradient(circle at center, #ffffff44, #cccccc);
     font-family: Arial, sans-serif;
     display: flex;
     justify-content: center;
@@ -37,7 +66,7 @@ body {
     margin: 0;
   }
 
-  .container {
+  #container {
     background-color: white;
     border: 1px solid #000cb457;
     border-top: .9rem solid #000ed3;
@@ -47,6 +76,8 @@ body {
     width: 1200px;
     height: 580px;
     text-align: center;
+    position: relative;
+    z-index: 2;
   }
 
   .form {
@@ -177,4 +208,175 @@ body {
   color: #555;
   box-shadow: 0 0 5px rgba(0,0,0,0.1);
   pointer-events: none;
+}
+
+/* Estilos para a lista de ramais */
+
+#container-ramais {
+  background-color: white;
+  border: 1px solid #000cb457;
+  border-top: .9rem solid #000ed3;
+  border-radius: 1.5rem;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.151);
+  width: 420px;
+  height: 100%;
+  position: absolute;
+  right: -33.5%;
+  top: -2.1%;
+  opacity: 0; /* inicialmente escondido */
+  transform: translateX(0px); /* começa fora da tela */
+  z-index: 0;
+  transition: opacity 0.2s ease-in-out;
+  pointer-events: none;
+}
+
+#container-ramais.visivel{
+  display: block;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+@media (max-width: 1024px) {
+  #container-ramais {
+    width: 100%;
+    height: auto;
+    right: 0;
+    top: 100%;
+    margin-top: 20px;
+    transform: translateX(0); /* evita efeito visual fora de tela */
+    border-radius: 0 0 1rem 1rem;
+  }
+}
+
+  /* 2° DIV para os ramais para o conteudo */
+
+#container-ramais-content{
+  height: 100%;
+}
+
+.area-lista-ramais-curitiba {
+  box-sizing: border-box;
+  border: 1px solid rgba(0, 0, 243, 0.432);
+  border-radius: 4px;
+  max-height: 22%;
+  font-size: .9em;
+  list-style: none;
+  display: grid;
+  justify-content: left;
+  padding: 1% 0% 0% 1%;
+  margin: 5px 5px 0 5px;
+  overflow-y: scroll;
+}
+
+.area-lista-ramais-campinas {
+  box-sizing: border-box;
+  border: 1px solid rgba(0, 0, 243, 0.432);
+  border-radius: 4px;
+  max-height: 149px;
+  font-size: .9em;
+  list-style: none;
+  display: grid;
+  justify-content: left;
+  padding: 1% 0% 0% 1%;
+  margin: 5px 5px 0 5px;
+}
+
+.area-lista-ramais-sao-paulo {
+  box-sizing: border-box;
+  border: 1px solid rgba(0, 0, 243, 0.432);
+  border-radius: 4px;
+  max-height: 149px;
+  font-size: .9em;
+  list-style: none;
+  display: grid;
+  justify-content: left;
+  padding: 1% 0% 0% 1%;
+  margin: 5px 5px 0 5px;
+
+}
+
+.area-lista-ramais-curitiba::-webkit-scrollbar, .area-lista-ramais-campinas::-webkit-scrollbar, .area-lista-ramais-sao-paulo::-webkit-scrollbar {
+  width: 8px; /* Largura da barra de rolagem */
+}
+
+.area-lista-ramais-curitiba::-webkit-scrollbar-thumb, .area-lista-ramais-campinas::-webkit-scrollbar-thumb, .area-lista-ramais-sao-paulo::-webkit-scrollbar-thumb {
+  background-color: #060d75; /* Cor da barra de rolagem */
+  border-radius: 3px 3px 3px 3px;
+}
+
+li {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr; /* Nome | Ramal | Setor */
+  align-items: center;
+  gap: 1em;
+  padding: 5px;
+  border-bottom: 1px solid #9fc6eb;
+}
+
+a{
+  color: #21507c;
+  text-decoration: none;
+}
+
+
+
+.Nome, .Setor {
+  font-weight: 500;
+  color: #21507c;
+}
+
+.Ramal {
+  text-align: center;
+  font-weight: 700;
+  color: #21507c;
+  margin: 0 3em;
+}
+
+
+#curitiba{
+  background-color: #21507c60;
+  border-radius: 4px;
+  text-align: center;
+  color: #21507c;
+  width: 97.5%;
+  margin: 0 0px 0 5px;
+  font-size: 1.3em;
+}
+
+#Campinas{
+  background-color: #21507c60;
+  border-radius: 4px;
+  color: #21507c;
+  width: 97.5%;
+  margin: 5px 0 0 5px;
+  font-size: 1.3em;
+}
+
+#São-Paulo{
+  background-color: #21507c60;
+  border-radius: 4px;
+  color: #21507c;
+  width: 97.5%;
+  margin: 5px 0 0 5px;
+  font-size: 1.3em;
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  #container {
+    width: 95%;
+    height: auto;
+    padding: 20px;
+  }
+
+  #container-ramais {
+    position: relative;
+    z-index: 0;
+    top: auto;
+    right: auto;
+    margin-top: 20px;
+    border-top: 5px solid #000ed3;
+    box-shadow: none;
+    transform: translateX(0);
+  }
 }
