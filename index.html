@@ -3,21 +3,25 @@
 <head>
   <meta charset="UTF-8" />
   <title>Consulta condomínio - Grupo CDG</title>
-  <link rel="stylesheet" href="index.css" />
-  <script src="index.js"></script>
+  <link rel="stylesheet" href="index.css"/>
+   <script src="index.js"></script>
 </head>
 <body>
-  <div class="container">
+  <div id="container">
     
-    <div id="logo">
+    <div id="título">
+
     <h2>Consulta condomínio</h2>
+
+    <button id="button-ramais"><img id="img-ramais" src="./Imagens/ramais6.png" alt="ramais=icone" loading="eager">Ramais</button>
+
     </div>
     
     <div class="form">
       <div class="box-input-pesquisar">
         <input id="input-pesquisar" type="text" placeholder="Pesquisar..." autocomplete="off" />
       </div>
-
+          
       <div class="box-inputs-disableds">
         <div class="grupo-input">
           <span>Nome cadastrado no Vouch:</span>
@@ -56,6 +60,51 @@
       </div>
     </div>
     <img src="./Imagens/Logo CDG.png" alt="logo-cdg" loading="eager">
+
+    <div id="container-ramais">
+      <div id="container-ramais-content">
+        <h2 id="title-ramais">Ramais</h2>
+
+        <h5 id="curitiba">Curitiba</h5>
+        <ul class="area-lista-ramais-curitiba">
+          <li> <span class="Nome">Adriane</span> <span class="Ramal"><a href="sip:3007">3007</a></span> <span class="Setor">Cobrança</span> </li>
+          <li> <span class="Nome">Thayana</span> <span class="Ramal"><a href="sip:3006">3006</a></span> <span class="Setor">Cobrança</span> </li>
+          <li> <span class="Nome">Gabriela</span> <span class="Ramal"><a href="sip:3005">3005</a></span> <span class="Setor">Cobrança</span> </li>
+          <!-- <li> <span class="Nome">Ariane</span> <span class="Ramal"><a href="sip:3003">3003</a></span> <span class="Setor">Cobrança</span> </li> -->
+          <li> <span class="Nome">Nathalia</span> <span class="Ramal"><a href="sip:3001">3001</a></span> <span class="Setor">Financeiro</span> </li>
+          <li> <span class="Nome">Debora</span> <span class="Ramal"><a href="sip:3002">3002</a></span> <span class="Setor">RH</span> </li>
+          <li> <span class="Nome">Valdirene</span> <span class="Ramal"><a href="sip:3004">3004</a></span> <span class="Setor">Gerência</span> </li>
+          <li> <span class="Nome">Lucas</span> <span class="Ramal"><a href="sip:3009">3009</a></span> <span class="Setor">T.I</span> </li>
+          <li> <span class="Nome">Eudinei</span> <span class="Ramal"><a href="sip:3000">TEL</a></span> <span class="Setor">Aluuga</span> </li>
+          <li> <span class="Nome">Claudete</span> <span class="Ramal"><a href="sip:3010">3010</a></span> <span class="Setor">Jurídico</span> </li>
+          <li> <span class="Nome">Dr. Guilherme</span> <span class="Ramal"><a href="sip:999997123">TEL</a></span> <span class="Setor">Jurídico</span> </li>
+          <li> <span class="Nome">Ana</span> <span class="Ramal"><a href="sip:3015">3015</a></span> <span class="Setor">Jurídico</span> </li>
+          <li> <span class="Nome">Willian</span> <span class="Ramal"><a href="sip:3014">3014</a></span> <span class="Setor">Jurídico</span> </li>
+          <li> <span class="Nome">Leticia</span> <span class="Ramal"><a href="sip:3011">3011</a></span> <span class="Setor">Jurídico</span> </li>
+          <li> <span class="Nome">Dr. Fernando</span> <span class="Ramal"><a href="sip:3013">3013</a></span> <span class="Setor">Jurídico</span> </li>
+          <li> <span class="Nome">Fernando</span> <span class="Ramal"><a href="sip:3008">3008</a></span> <span class="Setor">Sócio</span> </li>
+          <li> <span class="Nome">Franciele</span> <span class="Ramal"><a href="sip:3000">3000</a></span> <span class="Setor">Sócio</span> </li>
+        </ul>
+
+        <h5 id="Campinas">Campinas</h5>
+        <ul class="area-lista-ramais-campinas">
+          <li> <span class="Nome">Bruna</span> <span class="Ramal"><a class="espaçamento" href="sip:2035">2035</a></span> <span class="Setor">Cobrança</span> </li>
+          <li> <span class="Nome">Julia</span> <span class="Ramal"><a class="espaçamento" href="sip:2036">2036</a></span> <span class="Setor">Cobrança</span> </li>
+          <li> <span class="Nome">Mayara</span> <span class="Ramal"><a class="espaçamento" href="sip:2037">2037</a></span> <span class="Setor">Cobrança</span> </li>
+          <li> <span class="Nome">Mariana</span> <span class="Ramal"><a class="espaçamento" href="sip:2038">2038</a></span> <span class="Setor">Cobrança</span> </li>
+        </ul>
+
+        <h5 id="São-Paulo">São Paulo</h5>
+        <ul class="area-lista-ramais-sao-paulo">
+          <li> <span class="Nome">Fabiana</span> <span class="Ramal"><a class="espaçamento" href="sip:2040">2040</a></span> <span class="Setor">Cobrança</span> </li>
+          <li> <span class="Nome">Ana</span> <span class="Ramal"><a class="espaçamento" href="sip:2041">2041</a></span> <span class="Setor">Cobrança</span> </li>
+          <li> <span class="Nome">Dianna</span> <span class="Ramal"><a class="espaçamento" href="sip:2042">2042</a></span> <span class="Setor">Cobrança</span> </li>
+          <li> <span class="Nome">Kelvin</span> <span class="Ramal"><a class="espaçamento" href="sip:2043">2043</a></span> <span class="Setor">Cobrança</span> </li>
+        </ul>
+
+      </div>
+    </div>
   </div>
 </body>
 </html>
+
